@@ -1,2 +1,3 @@
 streamlit-audiorecorder
 SpeechRecognition
+speech_recognition
