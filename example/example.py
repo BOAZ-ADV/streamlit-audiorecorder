@@ -12,11 +12,11 @@ if len(audio) > 0:
     st.audio(audio.tobytes())
     
     # To save audio to a file:
-    wav_file = open("audio.mp3", "wb")
+    wav_file = open("audio.wav", "wb")
     wav_file.write(audio.tobytes())
     wav_file.close()
 
-id = STT.BitoPost("audio.mp3")
+id = STT.BitoPost("audio.wav")
 time.sleep(5)
 result = STT.BitoGet(id)
 
