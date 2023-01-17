@@ -16,7 +16,7 @@ if len(audio) > 0:
     wav_file.write(audio.tobytes())
     wav_file.close()
 
-id = STT.BitoPost("./audio.mp3")
+id = STT.BitoPost("audio.mp3")
 time.sleep(5)
 result = STT.BitoGet(id)
 
