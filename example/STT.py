@@ -27,7 +27,7 @@ def BitoPost(DIR: str):
         'https://openapi.vito.ai/v1/transcribe',
         headers={'Authorization': 'bearer '+token},
         data={'config': json.dumps(config)},
-        files={'file': open(file_dir, 'rb')}
+        files={'file': open(DIR, 'rb')}
     )
     resp.raise_for_status()
     
