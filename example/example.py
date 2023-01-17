@@ -1,5 +1,7 @@
 import streamlit as st
 from audiorecorder import audiorecorder
+import STT
+import time
 # import speech_recognition as sr
 
 st.title("Audio Recorder")
@@ -12,6 +14,12 @@ if len(audio) > 0:
     # To save audio to a file:
     wav_file = open("audio.wav", "wb")
     wav_file.write(audio.tobytes())
+    wav_file.close()
+
+id = STT.BitoPost("audio.wav")
+time.sleep(5)
+result = STT.BitoGet(id)
+
 
 # r = sr.Recognizer()
 
@@ -23,6 +31,6 @@ if len(audio) > 0:
 # result = r.recognize_google(audio2, language = 'ko-KR', show_all=True)
 # print(result['alternative'][0]['transcript'])
 
-# text_output = st.empty()
-# text_output.markdown(f"**Text:** ")
+text_output = st.empty()
+text_output.markdown(f"**Text:** {result}")
 
